@@ -3,15 +3,15 @@
 
 ### 사용 부품
 Pixhawk2.4.8<br>
-- 수신기
-- Radiolink M8N M10N SE100 : GPS
-- Safe switch
-- Buzzer<br>
+  - 수신기
+- - Radiolink M8N M10N SE100 : GPS
+- - Safe switch
+- - Buzzer<br>
 Jetson nano Develop kit-B01<br>
 RPI 8MP CAMERA BOARD : 일반 카메라<br>
 RPI NOIR CAMERA BOARD : 적외선 카메라<br>
 Lipo Battery
-- 3S 5000mah<br>
+- - 3S 5000mah<br>
 T2212-920KV Brushless DC electric motor
 
 ### 설계
