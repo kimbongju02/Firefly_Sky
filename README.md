@@ -6,7 +6,7 @@ Pixhawk2.4.8
 - 수신기
 - Radiolink M8N M10N SE100 : GPS
 - Safe switch
-- Buzzer
+- Buzzer<br>
 Jetson nano Develop kit-B01
 RPI 8MP CAMERA BOARD : 일반 카메라
 RPI NOIR CAMERA BOARD : 적외선 카메라
