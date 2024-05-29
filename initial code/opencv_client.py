@@ -55,7 +55,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client_socket:
         retval, frame = capture.read()
 
         if not retval:
-             print('can't read frame')
+             print('can\'t read frame')
         
         # imencode : image (frame) encoding
         # 1) Output file extension
