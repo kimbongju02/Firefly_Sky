@@ -2,7 +2,7 @@
 드론과 객체인식을 사용하여 산불 및 연기 감지
 
 ### 사용 부품
-Pixhawk2.4.8
+Pixhawk2.4.8<br>
 - 수신기
 - Radiolink M8N M10N SE100 : GPS
 - Safe switch
