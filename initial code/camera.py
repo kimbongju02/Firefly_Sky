@@ -39,6 +39,7 @@ def gstreamer_pipeline(
             display_height,
         )
     )
+
  
  
 def show_camera():
@@ -51,6 +52,8 @@ def show_camera():
         # Window
         while True:
             ret_val, img = cap.read()
+            if ret_val == 0:
+                print("fail to read frame")
             cv2.imshow("CSI Camera", img)
 
         cap.release()

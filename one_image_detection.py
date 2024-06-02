@@ -1,9 +1,9 @@
 import cv2
 import time
-from detect import detect
+import detect
 
 def gstreamer_pipeline(
-    sensor_mode=0,
+    sensor_id=0,
     capture_width=480,
     capture_height=320,
     display_width=480,
@@ -12,14 +12,14 @@ def gstreamer_pipeline(
     flip_method=0,
 ):
     return (
-        "gst-launch-1.0 nvarguscamerasrc sensor_mode=%d ! "
-        "\'video/x-raw(memory:NVMM),width=%d,height=%d,framerate=%d/1\' ! "
+        "nvarguscamerasrc sensor-id=%d ! "
+        "video/x-raw(memory:NVMM), width=(int)%d, height=(int)%d, framerate=(fraction)%d/1 ! "
         "nvvidconv flip-method=%d ! "
-        "\'video/x-raw,width=%d,height=%d\' ! "
+        "video/x-raw, width=(int)%d, height=(int)%d, format=(string)BGRx ! "
         "videoconvert ! "
-        "video/x-raw, format=NV12 ! appsink"
+        "video/x-raw, format=(string)BGR ! appsink"
         % (
-            sensor_mode,
+            sensor_id,
             capture_width,
             capture_height,
             framerate,
@@ -31,8 +31,6 @@ def gstreamer_pipeline(
 print("------------print gstreamer_pipeline(flip_method=0)------------ \n", gstreamer_pipeline(flip_method=0))
 
 capture = cv2.VideoCapture(gstreamer_pipeline(flip_method=0), cv2.CAP_GSTREAMER)
-capture.set(cv2.CAP_PROP_FRAME_WIDTH, 480) # Length
-capture.set(cv2.CAP_PROP_FRAME_HEIGHT, 320) # Width
 
 try:
     while True:
@@ -40,10 +38,10 @@ try:
 
         if not retval:
             print('can\'t read frame')
-        
-        #cv2.imwrite(filename, frame)
-        #detect()
-        
+        cv2.imwrite("./data/images/test.jpg", frame)
+        print("----------------success save image----------------")
+        detect.detect()
         time.sleep(5)
+        quit()
 finally:
     capture.release()

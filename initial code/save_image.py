@@ -32,8 +32,7 @@ def show_camera():
     cap = cv2.VideoCapture(gstreamer_pipeline(flip_method=0), cv2.CAP_GSTREAMER)
 
     ret_val, img = cap.read()
-    cv2.imshow("image", img)
-    #cv2.imwrite("../saveimage.jpg", img)
+    cv2.imwrite("../saveimage.jpg", img)
     print("------------save image success------------")
 
     cap.release()
