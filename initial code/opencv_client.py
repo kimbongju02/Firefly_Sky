@@ -1,9 +1,9 @@
 # # -*- coding: utf-8 -*-
 # Import required packages
-import cv2 # real-time image processing (OpenCV) module
-Module that provides the API required for import socket # socket programming
-Import pickle # Module for serialization and de-serialization of objects
-Data processing module in the format of import structure # bytes
+import cv2 # real-time image processing (OpenCV) moduleModule that provides the API required for 
+import socket # socket programming
+import pickle # Module for serialization and de-serialization of objectsData processing module in the format of 
+import struct # bytes
 
 # Server IP & Port num
 ip = {ip}

@@ -39,7 +39,7 @@ try:
         retval, frame = capture.read()
 
         if not retval:
-                print('can\'t read frame')
+            print('can\'t read frame')
         
         #cv2.imwrite(filename, frame)
         #detect()
