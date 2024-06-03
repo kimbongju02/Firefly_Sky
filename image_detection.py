@@ -33,14 +33,16 @@ print("------------print gstreamer_pipeline(flip_method=0)------------ \n", gstr
 capture = cv2.VideoCapture(gstreamer_pipeline(flip_method=0), cv2.CAP_GSTREAMER)
 
 try:
+    start_time = time.time()
     while True:
         retval, frame = capture.read()
-
         if not retval:
             print('can\'t read frame')
-        cv2.imwrite("./data/images/test.jpg", frame)
-        print("----------------success save image----------------")
-        detect.detect()
-        time.sleep(7)
+        
+        current_time = time.time()
+        if current_time - start_time >= 7:
+            cv2.imwrite("./data/images/test.jpg", frame)
+            detect.detect()
+            start_time = current_time
 finally:
     capture.release()
