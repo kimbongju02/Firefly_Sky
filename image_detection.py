@@ -40,11 +40,7 @@ try:
             print('can\'t read frame')
         cv2.imwrite("./data/images/test.jpg", frame)
         print("----------------success save image----------------")
-        start_time = time.time()
         detect.detect()
-        end_time = time.time()
-        elapsed_time = end_time - start_time
-        print(f"실행 시간: {elapsed_time}초")
-        quit()
+        time.sleep(7)
 finally:
     capture.release()
